@@ -72,9 +72,29 @@ h6 {
    font-weight: 400;
 }
 
+a {
+   color: inherit;
+}
+
 html {
    font-size: 62.5%;
    font-family: "Roboto", sans-serif;
 }
 
 //
+
+#__next {
+   max-width: 1300px;
+   margin: 0 auto;
+   min-height: 100vh;
+   width: 100%;
+   position: relative;
+}
+
+.wrapper {
+   min-height: 100vh;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(247, 247, 247);
+}

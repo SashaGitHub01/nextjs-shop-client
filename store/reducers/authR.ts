@@ -1,10 +1,9 @@
 import { Actions, ActionTypes, IState } from "../../types/auth";
 
-
 const initialState: IState = {
-   user: undefined,
+   user: null,
    isLoading: false,
-   error: undefined
+   error: null
 }
 
 export const authReducer = (state = initialState, action: ActionTypes): IState => {
@@ -15,12 +14,19 @@ export const authReducer = (state = initialState, action: ActionTypes): IState =
             isLoading: action.payload
          }
 
+      case Actions.SET_ERROR:
+         return {
+            ...state,
+            isLoading: false,
+            error: action.payload
+         }
+
       case Actions.SET_USER:
          return {
             ...state,
             user: action.payload,
             isLoading: false,
-            error: undefined
+            error: null
          }
 
       default:

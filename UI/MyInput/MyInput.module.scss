@@ -1,0 +1,36 @@
+.input_cont {
+   border-radius: 5px;
+   border: 1px solid rgb(49, 49, 49, 0.7);
+   padding: 2rem 1rem 1rem 1rem;
+   position: relative;
+
+   .input_placeholder {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      span {
+         color: rgb(110, 110, 110);
+         font-size: 1.6rem;
+         font-weight: 300;
+      }
+   }
+   .input {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+   }
+}
+
+.input_active {
+   box-shadow: 0 0 7px 4px rgba(0, 0, 0, 0.1);
+
+   & .input_placeholder {
+      top: 0;
+      transform: translateY(25%);
+
+      & span {
+         font-size: 1.4rem;
+      }
+   }
+}

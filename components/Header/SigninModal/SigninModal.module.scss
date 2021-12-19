@@ -1,0 +1,45 @@
+@import "../../../scss/variables";
+
+.form {
+   padding: 1.25rem 0 2rem 0;
+   display: flex;
+   flex-direction: column;
+   gap: 2.2rem;
+
+   & .form_submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $orange;
+      border-radius: 8px;
+      min-height: 4rem;
+
+      &:hover {
+         background-color: $orange_hover;
+      }
+
+      &:disabled {
+         pointer-events: none;
+         background-color: $orange_dis;
+      }
+
+      & span {
+         font-size: 1.6rem;
+         font-weight: bold;
+         color: #fff;
+         text-align: center;
+      }
+   }
+
+   & .message {
+      font-size: 1.2rem;
+      text-align: center;
+   }
+   & .link {
+      cursor: pointer;
+      font-weight: bold;
+      color: $orange;
+      text-decoration: underline;
+      font-size: 1.3rem;
+   }
+}

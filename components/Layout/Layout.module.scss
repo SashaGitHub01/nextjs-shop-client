@@ -1,0 +1,44 @@
+@import "../../scss/variables";
+
+.main {
+   display: flex;
+   flex: 1 1 auto;
+   gap: 1.5rem;
+   padding: 2rem;
+}
+
+.content {
+   flex: 1 1 auto;
+   background-color: #fff;
+   padding: 1.2rem 1.5rem;
+}
+
+.nav {
+   background-color: #fff;
+   border-radius: 1.2rem;
+   overflow: hidden;
+   box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.08);
+
+   & .aside {
+   }
+   & .nav_list {
+   }
+   & .nav_item {
+      &:hover {
+         background-color: rgb(243, 243, 243);
+      }
+   }
+   & .nav_link {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+      padding: 1.2rem 1.6rem;
+
+      & .nav_icon {
+         margin-right: 0.9rem;
+         font-size: 2.2rem;
+         color: $orange;
+      }
+   }
+}
