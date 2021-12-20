@@ -4,6 +4,7 @@ import React, { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { wrapper } from '../store';
 import { fetchAuth } from '../store/actions/authActions';
+import Layout from '../components/Layout/Layout';
 
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
    const dispatch = useDispatch();
@@ -12,7 +13,9 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
       dispatch(fetchAuth());
    }, [])
 
-   return <Component {...pageProps} />
+   return <Layout>
+      <Component {...pageProps} />
+   </Layout>
 };
 
 export default wrapper.withRedux(WrappedApp);

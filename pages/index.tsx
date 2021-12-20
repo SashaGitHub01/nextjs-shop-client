@@ -1,48 +1,72 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import { END } from 'redux-saga'
-import { BrandsService } from '../API/brands'
+import { END } from 'redux-saga';
+import ProductsList from '../components/ProductsList/ProductsList'
 import Layout from '../components/Layout/Layout'
+import { useTypedSelector } from '../hooks/useTypedSelector'
 import { SagaStore, wrapper } from '../store'
+import { fetchBrands } from '../store/actions/brandsActions'
+import { fetchProducts, fetchTrands } from '../store/actions/productsActions'
 import s from '../styles/Home.module.scss'
 import { IBrand } from '../types/IBrand'
+import Link from 'next/link';
 
 interface IHome {
    brands: IBrand[],
 }
 
-const Home: NextPage<IHome> = ({ brands }) => {
+const Home: NextPage = () => {
+   const { brands, isLoading } = useTypedSelector(state => state.brands)
+   const { products, isLoading: isLoadingPr } = useTypedSelector(state => state.products)
 
    return (
-      <Layout>
-         <div className="h">
-            <div className="h_c">
-               <div className="br">
-                  <div className="t">Главная</div>
-                  <div className="b_c">
-                     <div className="brow">
-                        {/* {brands.map(({ id, name }) => (
-                           <div className="bi">
-                              <span>{name}</span>
-                           </div>
-                        ))} */}
-                     </div>
-                  </div>
+      <div className={s.home}>
+         <div className={s.home_col}>
+            <div className={s.home_header}>
+               <div className={s.home_title}>
+                  Главная
                </div>
             </div>
+            <div className={s.brands_col}>
+               <div className={s.brands_row}>
+                  {brands.map(({ id, name }) => (
+                     <Link href={`/catalog?brand=${id}`} key={id}>
+                        <a className={s.brands_item}>
+                           <h6>{name}</h6>
+                        </a>
+                     </Link>
+                  ))}
+               </div>
+            </div>
+            <div className={s.products_col}>
+               <div className={s.products_title}>
+                  <span>Популярные товары</span>
+               </div>
+               <ProductsList
+                  items={products} isLoading={isLoadingPr}
+               />
+            </div>
          </div>
-      </Layout >
+      </div>
 
    )
 }
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async (ctx) => {
-   const brands = await BrandsService.fetchBrands();
+export default Home;
 
-   return {
-      props: {
-         brands: brands
-      }
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (ctx) => {
+   try {
+      store.dispatch(fetchBrands());
+      store.dispatch(fetchTrands());
+
+      store.dispatch(END);
+
+      await (store as SagaStore).sagaTask?.toPromise();
+
+      return { props: {} }
+   } catch (err) {
+      console.log(err);
+      return { props: {} }
    }
 });
-export default Home
+

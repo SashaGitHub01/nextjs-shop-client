@@ -1,1 +1,54 @@
 @import "../scss/variables";
+
+.home {
+   .home_col {
+   }
+   .home_header {
+      padding: 0px 0px 1.2rem 0px;
+      border-bottom: 1px solid rgba(5, 5, 5, 0.1);
+      .home_title {
+         font-size: 2.4rem;
+         font-weight: bold;
+         color: $main;
+      }
+   }
+
+   & .products_title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $main;
+      padding: 2rem 0;
+   }
+}
+
+.brands_col {
+   padding: 1.8rem 0 0 0;
+   & .brands_row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+   }
+   & .brands_item {
+      cursor: pointer;
+      font-size: 1.7rem;
+      border-radius: 8px;
+      border: 2px solid $orange_hover;
+      min-width: 15rem;
+      height: 7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+
+      & h6 {
+         font-weight: bold;
+         color: $orange;
+      }
+
+      &:hover {
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+   }
+}

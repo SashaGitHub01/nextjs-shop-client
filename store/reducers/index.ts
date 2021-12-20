@@ -2,10 +2,16 @@ import { combineReducers } from 'redux';
 import { HYDRATE, } from 'next-redux-wrapper';
 import { authReducer } from './authR';
 import { brandsReducer } from './brandsR';
+import { productsReducer } from './productsR';
+import { catalogReducer } from './catalogR';
+import { typesReducer } from './typesR';
 
 const rootReducer = combineReducers({
    auth: authReducer,
-   brands: brandsReducer
+   brands: brandsReducer,
+   products: productsReducer,
+   catalog: catalogReducer,
+   types: typesReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

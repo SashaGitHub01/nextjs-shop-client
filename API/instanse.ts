@@ -1,7 +1,8 @@
 import axios from "axios";
-import { config } from 'dotenv';
+
+export const PROXY = 'http://localhost:3001'
 
 export const instanse = axios.create({
-   baseURL: 'http://localhost:3001/',
+   baseURL: PROXY,
    withCredentials: true,
 })
