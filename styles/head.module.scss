@@ -1,0 +1,49 @@
+@import "../scss/variables";
+
+.head {
+   padding: 1.2rem 0;
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   border-bottom: 1px solid rgba(15, 15, 15, 0.151);
+
+   & a {
+      cursor: pointer;
+      &:hover {
+         & span {
+            color: rgb(87, 87, 87);
+         }
+      }
+
+      & .back_icon {
+         color: $orange;
+         font-size: 2.4rem;
+         vertical-align: middle;
+      }
+
+      & span {
+         font-size: 1.6rem;
+         font-weight: bold;
+         vertical-align: middle;
+         margin-left: 0.7rem;
+      }
+   }
+
+   & h4 {
+      font-weight: bold;
+      font-size: 1.8rem;
+      position: relative;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: -1rem;
+         transform: translateY(-50%) translateX(-50%);
+         width: 5px;
+         height: 5px;
+         border-radius: 50%;
+         background-color: $orange;
+      }
+   }
+}

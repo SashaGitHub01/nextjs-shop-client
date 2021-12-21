@@ -8,4 +8,10 @@ export class TypesService {
 
       return res.data.data
    }
+
+   static fetchTypeOne = async (id: string): Promise<IType> => {
+      const res = await instanse.get<IResponse<IType>>(`api/type/${id}`);
+
+      return res.data.data
+   }
 }

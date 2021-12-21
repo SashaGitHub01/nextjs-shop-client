@@ -4,6 +4,7 @@ import { IState, Actions, ActionsTypes } from "../../types/catalog";
 const initialState: IState = {
    items: [],
    error: null,
+   title: 'Каталог',
    isLoading: false
 }
 
@@ -28,6 +29,12 @@ export const catalogReducer = (state = initialState, action: ActionsTypes): ISta
             ...state,
             error: action.payload,
             isLoading: false
+         }
+
+      case Actions.SET_TITLE:
+         return {
+            ...state,
+            title: action.payload
          }
 
 

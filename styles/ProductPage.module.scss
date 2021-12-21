@@ -1,0 +1,210 @@
+@import "../scss/variables";
+
+.prod_page {
+   .prod_col {
+   }
+   .prod_content {
+      padding: 1.5rem 3rem;
+   }
+   .prod_info {
+   }
+   .prod_name {
+      padding-bottom: 1.9rem;
+      padding-left: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      h3 {
+         font-size: 1.9rem;
+         font-weight: bold;
+         color: $main;
+      }
+   }
+
+   .prod_info_row {
+      display: flex;
+      justify-content: space-between;
+
+      .prod_info_left {
+         & .prod_img {
+            max-width: 250px;
+
+            & img {
+               max-width: 100%;
+               display: block;
+            }
+         }
+      }
+      .prod_info_right {
+      }
+   }
+}
+
+.prod_info_right {
+   & .window_head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .prod_status {
+         font-size: 1.7rem;
+         color: rgb(52, 236, 67);
+         font-weight: bold;
+      }
+
+      & .prod_rating {
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+
+         .star_icon_e {
+            font-size: 2.1rem;
+            color: $orange;
+            overflow: hidden;
+            position: relative;
+         }
+
+         & span {
+            font-size: 1.5rem;
+            margin-left: 0.4rem;
+         }
+      }
+   }
+
+   & .prod_window {
+      border: 1px solid rgba(41, 41, 41, 0.438);
+      border-radius: 8px;
+      box-shadow: 0 0 15px 4px rgba(5, 5, 5, 0.116);
+      padding: 1.6rem 2.4rem;
+   }
+   & .window_content {
+   }
+   & .prod_row_r {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      padding-top: 2rem;
+   }
+   & .add_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      color: #fff;
+      font-weight: bold;
+      background-color: $orange;
+      font-size: 1.7rem;
+      min-height: 40px;
+      padding: 0 1.6rem;
+      border-radius: 8px;
+
+      & .plus_icon {
+         font-size: 2.2rem;
+      }
+      & span {
+      }
+   }
+   & .prod_price {
+      font-size: 1.8rem;
+      color: $main;
+      display: flex;
+      align-items: center;
+
+      & span {
+         font-size: 2.2rem;
+         font-weight: bold;
+         margin-right: 0.7rem;
+      }
+   }
+
+   .prod_about {
+      padding-top: 2rem;
+
+      & .prod_about_item {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         position: relative;
+      }
+      & .about_name {
+         line-height: 3rem;
+         font-weight: bold;
+         font-size: 1.4rem;
+         color: $main;
+
+         & span {
+            &::after {
+               content: "";
+               position: absolute;
+               width: 100%;
+               height: 1px;
+               background-color: rgba(82, 82, 82, 0.178);
+               left: 0;
+               bottom: 0;
+            }
+
+            &:first-child {
+               &::before {
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 1px;
+                  background-color: rgba(82, 82, 82, 0.178);
+                  left: 0;
+                  top: 0;
+               }
+            }
+         }
+      }
+      & .prod_type {
+         color: $orange;
+         font-size: 1.4rem;
+         font-weight: bold;
+      }
+   }
+}
+
+//xaracteristyki
+
+.features {
+   padding-top: 1.8rem;
+   & .features_head {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+      padding: 1rem;
+
+      & span {
+         font-size: 1.8rem;
+         font-weight: bold;
+         color: $main;
+      }
+   }
+   & .features_col {
+   }
+   & .features_list {
+      padding-top: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+   & .features_item {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      gap: 1.2rem;
+
+      & .features_title {
+         font-weight: bold;
+         color: $main;
+      }
+      & .features_description {
+      }
+   }
+   & .features_empty {
+      font-size: 2.8rem;
+      text-align: center;
+      padding: 2rem;
+      color: rgb(102, 102, 102);
+   }
+}

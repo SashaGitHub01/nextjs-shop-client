@@ -1,12 +1,16 @@
 import { IProduct } from "../../types/IProduct";
 import {
-   Actions, setItemsI, setErrorI, setIsLoadingI, fetchItemsI,
+   Actions, setItemsI, setErrorI, setIsLoadingI, fetchItemsI, setTitleI,
 } from "../../types/catalog";
 import { IItemsReq } from "../../types/IItemsReq";
 
 
 export const setCatalogItems = (prod: IProduct[]): setItemsI => ({
    type: Actions.SET_ITEMS, payload: prod
+})
+
+export const setCatalogTitle = (title: string): setTitleI => ({
+   type: Actions.SET_TITLE, payload: title
 })
 
 export const setIsLoading = (bool: boolean): setIsLoadingI => ({

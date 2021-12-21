@@ -1,0 +1,72 @@
+@import "../../scss/variables";
+
+.item {
+   border-bottom: 1px solid rgba(49, 49, 49, 0.151);
+   padding: 1.5rem;
+   position: relative;
+   & .item_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+   }
+   & .item_main {
+      flex: 0 1 50%;
+      display: flex;
+      gap: 1.4rem;
+   }
+   & .item_image {
+      flex: 0 0 140px;
+
+      & img {
+         max-width: 100%;
+         display: block;
+      }
+   }
+   & .item_name {
+      padding-top: 0.2rem;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: $main;
+      & span {
+      }
+   }
+}
+.ctrl {
+   & .ctrl_panel {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(80, 80, 80, 0.219);
+      border-radius: 5px;
+      overflow: hidden;
+   }
+   & .ctrl_btn {
+      background-color: rgba(211, 211, 211, 0.37);
+      padding: 0.5rem;
+
+      &:hover {
+         background-color: rgba(211, 211, 211, 0.5);
+      }
+   }
+   & .ctrl_icon {
+      font-size: 2.4rem;
+      color: $main;
+   }
+   & .ctrl_count {
+      font-size: 1.6rem;
+      color: $main;
+      padding: 0 1rem;
+   }
+}
+
+.price {
+   font-size: 1.9rem;
+   font-weight: bold;
+   color: $orange;
+   display: flex;
+   align-items: center;
+
+   & span {
+      margin-right: 0.5rem;
+   }
+}

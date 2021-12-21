@@ -3,6 +3,7 @@ import { IProduct } from "./IProduct";
 
 export enum Actions {
    SET_ITEMS = 'catalog/SET_ITEMS',
+   SET_TITLE = 'catalog/SET_TITLE',
    SET_IS_LOADING = 'catalog/SET_IS_LOADING',
    SET_ERROR = 'catalog/SET_ERROR',
    FETCH_ITEMS = 'catalog/FETCH_ITEMS',
@@ -11,6 +12,7 @@ export enum Actions {
 
 export interface IState {
    items: IProduct[],
+   title: string,
    isLoading: boolean,
    error: string | null
 }
@@ -18,6 +20,11 @@ export interface IState {
 export interface setItemsI {
    type: Actions.SET_ITEMS,
    payload: IProduct[]
+}
+
+export interface setTitleI {
+   type: Actions.SET_TITLE,
+   payload: string
 }
 
 export interface setIsLoadingI {
@@ -31,7 +38,8 @@ export interface setErrorI {
 }
 
 export interface fetchItemsI {
-   type: Actions.FETCH_ITEMS, payload: IItemsReq
+   type: Actions.FETCH_ITEMS,
+   payload: IItemsReq
 }
 
 
@@ -39,3 +47,4 @@ export type ActionsTypes = setItemsI
    | fetchItemsI
    | setErrorI
    | setIsLoadingI
+   | setTitleI

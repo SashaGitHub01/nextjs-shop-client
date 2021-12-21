@@ -1,17 +1,39 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { END } from "redux-saga";
-import Layout from "../../components/Layout/Layout";
+import { ArrowIcon } from "../../assets/icons";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { SagaStore, wrapper } from "../../store";
 import { fetchItems } from "../../store/actions/catalogActions";
+import s from '../../styles/Catalog.module.scss';
+import head from '../../styles/head.module.scss';
+import Loader from "../../UI/Loader/Loader";
 
 const Catalog: NextPage = () => {
-   const { items, isLoading } = useTypedSelector(state => state.catalog)
+   const { items, isLoading, title } = useTypedSelector(state => state.catalog)
 
    return (
-      <ProductsList items={items} isLoading={isLoading} />
+      <>
+         {!isLoading
+            ? <div className={s.catalog}>
+               <div className={head.head}>
+                  <Link href='/'>
+                     <a>
+                        <ArrowIcon className={head.back_icon} />
+                        <span>На главную</span>
+                     </a>
+                  </Link>
+                  {title
+                     && <h4>
+                        {title}
+                     </h4>}
+               </div>
+               <ProductsList items={items} isLoading={isLoading} />
+            </div>
+            : <Loader />}
+      </>
    )
 }
 

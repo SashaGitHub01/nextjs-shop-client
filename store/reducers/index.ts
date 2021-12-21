@@ -5,13 +5,17 @@ import { brandsReducer } from './brandsR';
 import { productsReducer } from './productsR';
 import { catalogReducer } from './catalogR';
 import { typesReducer } from './typesR';
+import { productPageReducer } from './productPageR';
+import { cartReducer } from './cartR';
 
 const rootReducer = combineReducers({
    auth: authReducer,
    brands: brandsReducer,
    products: productsReducer,
    catalog: catalogReducer,
-   types: typesReducer
+   types: typesReducer,
+   productPage: productPageReducer,
+   cart: cartReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

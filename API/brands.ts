@@ -9,4 +9,10 @@ export class BrandsService {
 
       return res.data.data
    }
+
+   static fetchBrandOne = async (id: string): Promise<IBrand> => {
+      const res = await instanse.get<IResponse<IBrand>>(`api/brand/${id}`);
+
+      return res.data.data
+   }
 }

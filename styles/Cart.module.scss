@@ -1,0 +1,133 @@
+@import "../scss/variables";
+
+.cart {
+   position: relative;
+
+   & .cart_head {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(29, 29, 29, 0.233);
+      & span {
+         font-weight: bold;
+         color: $main;
+         font-size: 1.9rem;
+      }
+   }
+   & .cart_row {
+      padding-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+   }
+}
+
+.cart_left {
+   flex: 1 1 auto;
+}
+
+.cart_right {
+   width: 25%;
+   padding-right: 2rem;
+
+   & .check {
+      border-radius: 8px;
+      border: 1px solid rgba(39, 39, 39, 0.171);
+      box-shadow: 0 0 12px 2px rgba(39, 39, 39, 0.164);
+   }
+
+   & .check_head {
+      border-bottom: 1px solid rgba(39, 39, 39, 0.171);
+      padding: 1rem 0;
+      text-align: center;
+      & span {
+         font-size: 1.7rem;
+         font-weight: bold;
+         color: $main;
+      }
+   }
+
+   & .info {
+      padding: 1rem;
+   }
+
+   & .info_item {
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: 2.6rem;
+
+      & .info_name {
+         & span {
+         }
+      }
+      & .info_value {
+         font-weight: bold;
+
+         & span {
+            margin-right: 0.4rem;
+         }
+      }
+   }
+
+   & .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0 2rem 0;
+
+      & .pay_button {
+         background-color: $orange;
+         min-height: 40px;
+         color: #fff;
+         font-weight: bold;
+         font-size: 1.8rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 0 1.6rem;
+         border-radius: 8px;
+         cursor: pointer;
+
+         &:hover {
+            background-color: $orange_hover;
+         }
+
+         & span {
+         }
+      }
+   }
+}
+
+.placeholder {
+   text-align: center;
+   padding: 2rem;
+   & .empty {
+      font-size: 2.3rem;
+      color: rgb(131, 131, 131);
+      font-weight: bold;
+   }
+
+   & .back {
+      padding: 1.2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & a {
+         cursor: pointer;
+         font-size: 1.6rem;
+         font-weight: bold;
+         color: #fff;
+         background-color: $orange;
+         min-height: 40px;
+         padding: 0 1.6rem;
+         border-radius: 8px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         max-width: 150px;
+
+         & span {
+         }
+      }
+   }
+}
